@@ -25,9 +25,34 @@ class Home extends StatelessWidget {
         foregroundColor: appWhite,
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+        padding: const EdgeInsets.fromLTRB(50, 30, 50, 30),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 150,
+                  width: 300,
+                  child: Image(image: AssetImage('assets/images/F1-logo.png')),
+                ),
+              ],
+            ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomText(
+                  label: 'Login Screen',
+                  labelColor: primaryColor,
+                  uFontSize: 30,
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
             const CustomText(
               label: 'Username',
             ),
