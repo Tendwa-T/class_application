@@ -11,6 +11,14 @@ class PasswordTextEdit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(obscureText: true, controller: passController);
+    return TextField(
+        obscureText: true,
+        controller: passController,
+        decoration: const InputDecoration(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+          ),
+          prefixIcon: Icon(Icons.lock),
+        ));
   }
 }
