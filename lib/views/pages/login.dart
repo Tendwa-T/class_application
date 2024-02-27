@@ -1,8 +1,9 @@
 import 'package:class_application/configs/constants.dart';
-import 'package:class_application/views/customButton.dart';
-import 'package:class_application/views/customText.dart';
-import 'package:class_application/views/customTextField.dart';
+import 'package:class_application/views/widgets/customButton.dart';
+import 'package:class_application/views/widgets/customText.dart';
+import 'package:class_application/views/widgets/customTextField.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -97,6 +98,9 @@ class Login extends StatelessWidget {
               ),
               CustomButton(
                 buttonLabel: "Login",
+                action: () {
+                  Get.offAndToNamed("/home");
+                },
               ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.end,

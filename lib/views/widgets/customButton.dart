@@ -1,17 +1,20 @@
 import 'package:class_application/configs/constants.dart';
-import 'package:class_application/views/customText.dart';
+import 'package:class_application/views/widgets/customText.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final String buttonLabel;
-  const CustomButton({super.key, required this.buttonLabel});
+  final VoidCallback? action;
+  const CustomButton({
+    super.key,
+    required this.buttonLabel,
+    this.action,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {
-        print("Button clicked");
-      },
+      onPressed: action,
       style: ElevatedButton.styleFrom(
         backgroundColor: primaryColor,
         elevation: 4,
