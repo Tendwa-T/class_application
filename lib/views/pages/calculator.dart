@@ -1,5 +1,6 @@
 import 'package:class_application/configs/constants.dart';
 import 'package:class_application/controller/calculator_controller.dart';
+import 'package:class_application/utils/database.dart';
 import 'package:class_application/views/widgets/customButton.dart';
 import 'package:class_application/views/widgets/customText.dart';
 import 'package:class_application/views/widgets/customTextField.dart';
@@ -11,6 +12,7 @@ class Calculator extends StatelessWidget {
   TextEditingController num2Controller = TextEditingController();
   TextEditingController nameController = TextEditingController();
   CalculatorController calculatorController = Get.put(CalculatorController());
+  DatabaseSQFLITe db = DatabaseSQFLITe();
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +66,7 @@ class Calculator extends StatelessWidget {
     );
   }
 
-  void calculate() {
+  void calculate() async {
     var num1 = double.parse(num1Controller.text);
     var num2 = double.parse(num2Controller.text);
     String name = nameController.text;
@@ -72,5 +74,8 @@ class Calculator extends StatelessWidget {
     calculatorController.updateSum(sum);
     calculatorController.updateValue(num1, num2);
     calculatorController.updateName(name);
+
+    db.writeRecord("Test", "Tendwa");
+    db.readRec();
   }
 }

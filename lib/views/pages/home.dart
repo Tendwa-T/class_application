@@ -1,6 +1,7 @@
 import 'package:class_application/configs/constants.dart';
 import 'package:class_application/controller/home_controller.dart';
 import 'package:class_application/views/pages/calculator.dart';
+import 'package:class_application/views/pages/login.dart';
 import 'package:class_application/views/pages/students.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class Home extends StatelessWidget {
 
   var screens = [
     Text(
-      "Home",
+      usernameController.text,
       style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
     ),
     Calculator(),

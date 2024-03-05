@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(GetMaterialApp(
     initialRoute: "/",
     getPages: Routes.routes,
@@ -18,7 +19,7 @@ void main() {
 // Define initialRoute and getPages in your main.dart
 // Use Routes.route in GetPages
 
-//login
-//Registration
-//Dashboard
+//login functionality
+//Registration functionality
+//Dashboard functionality
 //Full navigation and routes

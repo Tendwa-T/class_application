@@ -1,17 +1,25 @@
 import 'package:class_application/configs/constants.dart';
+import 'package:class_application/utils/preferences.dart';
 import 'package:class_application/views/widgets/customButton.dart';
 import 'package:class_application/views/widgets/customText.dart';
 import 'package:class_application/views/widgets/customTextField.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+TextEditingController usernameController = TextEditingController();
+TextEditingController passController = TextEditingController();
+Pref myPreferences = Pref();
+
 class Login extends StatelessWidget {
   const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController usernameController = TextEditingController();
-    TextEditingController passController = TextEditingController();
+    myPreferences.getValue("username").then(
+      (value) {
+        usernameController.text = value;
+      },
+    );
     return Scaffold(
       appBar: AppBar(
         title: const Text("Login Screen"),
@@ -98,9 +106,7 @@ class Login extends StatelessWidget {
               ),
               CustomButton(
                 buttonLabel: "Login",
-                action: () {
-                  Get.offAndToNamed("/home");
-                },
+                action: goToLogin,
               ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -121,4 +127,10 @@ class Login extends StatelessWidget {
       ),
     );
   }
+}
+
+void goToLogin() {
+  myPreferences
+      .setValueString("username", usernameController.text)
+      .then((value) => Get.offAndToNamed("/home"));
 }
