@@ -1,6 +1,4 @@
 import 'package:class_application/utils/routes.dart';
-import 'package:class_application/views/pages/calculator.dart';
-import 'package:class_application/views/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

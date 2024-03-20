@@ -1,6 +1,7 @@
 import 'package:class_application/configs/constants.dart';
 import 'package:class_application/controller/home_controller.dart';
 import 'package:class_application/views/pages/calculator.dart';
+import 'package:class_application/views/pages/fetchDataPage.dart';
 import 'package:class_application/views/pages/login.dart';
 import 'package:class_application/views/pages/students.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -15,11 +16,11 @@ class Home extends StatelessWidget {
   var screens = [
     Text(
       usernameController.text,
-      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
     ),
     Calculator(),
-    Text("Notifications"),
-    Student(),
+    const FetchPage(),
+    Student()
   ];
 
   @override
@@ -27,7 +28,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton.extended(
           onPressed: () {},
-          label: Row(
+          label: const Row(
             children: [
               Icon(Icons.handshake),
               Text("Hello Tendwa"),
@@ -39,7 +40,7 @@ class Home extends StatelessWidget {
       ),
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: primaryColor,
-        items: [
+        items: const [
           Icon(Icons.home),
           Icon(Icons.calculate),
           Icon(Icons.notifications),
@@ -48,7 +49,7 @@ class Home extends StatelessWidget {
         onTap: (value) {
           _controller.updateSelectedPage(value);
         },
-        animationDuration: Duration(milliseconds: 200),
+        animationDuration: const Duration(milliseconds: 200),
       ),
       body: Obx(() => Center(child: screens[_controller.selectedPage.value])),
     );

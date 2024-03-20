@@ -1,4 +1,3 @@
-import 'package:class_application/configs/constants.dart';
 import 'package:class_application/controller/calculator_controller.dart';
 import 'package:class_application/utils/database.dart';
 import 'package:class_application/views/widgets/customButton.dart';
@@ -13,6 +12,8 @@ class Calculator extends StatelessWidget {
   TextEditingController nameController = TextEditingController();
   CalculatorController calculatorController = Get.put(CalculatorController());
   DatabaseSQFLITe db = DatabaseSQFLITe();
+
+  Calculator({super.key});
 
   @override
   Widget build(BuildContext context) {
